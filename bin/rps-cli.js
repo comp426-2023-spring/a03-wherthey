@@ -1,53 +1,41 @@
 #!/usr/bin/env node
 
-import { rps } from "../lib/rpsls.js"
-import minimist from "minimist"
 
-var argv = minimist(process.argv.slice(2))
+import minimist from "minimist";
+import { rps_function } from "../lib/rpsls.js";
 
-if (argv.r || argv.rules) {
-    console.log(`Rules for Rock Paper Scissors:
-        - Scissors CUTS Paper
-        - Paper COVERS Rock
-        - Rock CRUSHES Scissors`);
+const args = minimist(process.argv.slice(2));
+
+const help_message = `Usage: node-rps [SHOT]
+Play Rock Paper Scissors (RPS)
+  -h, --help      display this help message and exit
+  -r, --rules     display the rules and exit
+Examples:
+  node-rps        Return JSON with single player RPS result.
+                  e.g. {"player":"rock"}
+  node-rps rock   Return JSON with results for RPS played against a simulated opponent.
+                  e.g {"player":"rock","opponent":"scissors","result":"win"}`;
+
+const rules = `Rules for Rock Paper Scissors:
+- Scissors CUTS Paper
+- Paper COVERS Rock
+- Rock CRUSHES Scissors`;
+
+if (args.help_message || args.h) {
+    console.log(help_message);
     process.exit(0);
 }
-
-if (argv.h || argv.help) {
-    console.log(`Usage: node-rps [SHOT]
-        Play Rock Paper Scissors (RPS)
-        
-          -h, --help      display this help message and exit
-          -r, --rules     display the rules and exit
-        
-        Examples:
-          node-rps        Return JSON with single player RPS result.
-                          e.g. {"player":"rock"}
-          node-rps rock   Return JSON with results for RPS played against a simulated opponent.
-                          e.g {"player":"rock","opponent":"scissors","result":"win"}`);
+if (args.rules || args.r) {
+    console.log(rules);
     process.exit(0);
 }
+let shot = args._[0];
 
 try {
-  const result = rps(argv._[0]);
-  console.log(JSON.stringify(result));
-} catch (error) {
-  if (error instanceof RangeError) {
-    console.log(`Usage: node-rps [SHOT]
-    Play Rock Paper Scissors (RPS)
+    console.log(JSON.stringify(rps_function(shot)));
     
-      -h, --help      display this help message and exit
-      -r, --rules     display the rules and exit
-    
-    Examples:
-      node-rps        Return JSON with single player RPS result.
-                      e.g. {"player":"rock"}
-      node-rps rock   Return JSON with results for RPS played against a simulated opponent.
-                      e.g {"player":"rock","opponent":"scissors","result":"win"}`);
-    console.log(`Rules for Rock Paper Scissors:
-    - Scissors CUTS Paper
-    - Paper COVERS Rock
-    - Rock CRUSHES Scissors`);
+} catch (error){
+    console.log(help_message);
+    console.log(rules);
     process.exit(1);
-  }
 }
