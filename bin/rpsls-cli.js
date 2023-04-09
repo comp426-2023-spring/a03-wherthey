@@ -36,8 +36,8 @@ if (argv.h || argv.help) {
 }
 
 try {
-  const res = rpsls(argv._[0]);
-  console.log(JSON.stringify(res));
+  const result = rpsls(argv._[0]);
+  console.log(JSON.stringify(result));
 } catch (error) {
   if (error instanceof RangeError) {
     console.log(`Usage: node-rpsls [SHOT]

@@ -29,8 +29,8 @@ if (argv.h || argv.help) {
 }
 
 try {
-  const res = rps(argv._[0]);
-  console.log(JSON.stringify(res));
+  const result = rps(argv._[0]);
+  console.log(JSON.stringify(result));
 } catch (error) {
   if (error instanceof RangeError) {
     console.log(`Usage: node-rps [SHOT]
