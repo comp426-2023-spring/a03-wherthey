@@ -32,7 +32,7 @@ if (args.rules || args.r) {
 let shoot = args._[0]
 
 try {
-    console.log(JSON.stringify(rpsls(shoot)))
+    console.log(JSON.stringify(rps(shoot)))
     
 } catch (error){
     console.log(help_message)
