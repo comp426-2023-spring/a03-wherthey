@@ -35,10 +35,10 @@ if (args.rules || args.r) {
     console.log(rules);
     process.exit(0);
 }      
-let shot = args._[0];
+let shoot = args._[0];
 
 try {
-    console.log(JSON.stringify(rpsls_function(shot)));
+    console.log(JSON.stringify((shoot)));
     
 } catch (error){
     console.log(help_message);
