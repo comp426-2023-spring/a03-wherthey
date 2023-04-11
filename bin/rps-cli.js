@@ -5,7 +5,6 @@ import minimist from 'minimist'
 
 
 const args = minimist(process.argv.slice(2))
-const choices = [rock, paper, scissors]
 
 const help_message = `Usage: node-rps [SHOT]
 Play Rock Paper Scissors (RPS)
@@ -37,7 +36,7 @@ try {
     console.log(JSON.stringify(rps(shoot)))
     
 } catch (error) {
-    
+
     console.log(help_message)
     console.log(rules)
     process.exit(1)
