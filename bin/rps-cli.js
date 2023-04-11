@@ -38,7 +38,7 @@ try {
     
 } catch (error){
     if(shoot === undefined) {
-        return {'player': randomItem(choices)}
+        return {'player': choices[Math.floor(Math.random()* choices.length)]}
     }
     console.log(help_message)
     console.log(rules)
