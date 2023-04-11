@@ -39,5 +39,6 @@ try {
 
     console.log(help_message)
     console.log(rules)
+    console.log("I executed")
     process.exit(1)
 }
