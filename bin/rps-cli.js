@@ -31,8 +31,8 @@ if (args.rules || args.r) {
 }
 let shoot = args._[0]
 
-if (JSON>stringify(rpsls(shoot)) === undefined) {
-    return {"player": "rock"}
+if (JSON.stringify(rpsls(shoot)) === undefined) {
+    return '{"Player": "Rock"}'
 }
 
 try {
