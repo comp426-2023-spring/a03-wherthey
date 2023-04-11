@@ -33,7 +33,7 @@ let shoot = args._[0]
 
 
 try {
-    console.log(JSON.stringify(rps(shoot)))
+    console.log(JSON.stringify(rpsls(shoot)))
     
 } catch (error) {
 
