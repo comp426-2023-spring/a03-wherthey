@@ -36,10 +36,8 @@ let shoot = args._[0]
 try {
     console.log(JSON.stringify(rps(shoot)))
     
-} catch (error){
-    if(shoot === undefined) {
-        return {'player': choices[Math.floor(Math.random()* choices.length)]}
-    }
+} catch (error) {
+    
     console.log(help_message)
     console.log(rules)
     process.exit(1)
