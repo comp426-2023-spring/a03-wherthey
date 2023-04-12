@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { rpsls } from '../lib/rpsls.js'
+import { rps } from '../lib/rpsls.js'
 import minimist from 'minimist'
 
 
@@ -33,7 +33,7 @@ let shoot = args._[0]
 
 
 //try {
-    console.log(JSON.stringify(rpsls(shoot)))
+    console.log(JSON.stringify(rps(shoot)))
     
 /*} catch (error) {
 
