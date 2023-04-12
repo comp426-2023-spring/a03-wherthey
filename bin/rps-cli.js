@@ -32,12 +32,12 @@ if (args.rules || args.r) {
 let shoot = args._[0]
 
 
-//try {
+try {
     console.log(JSON.stringify(rps(shoot)))
     
-/*} catch (error) {
+} catch (error) {
 
     console.log(help_message)
     console.log(rules)
     process.exit(1)
-}*/
+}
