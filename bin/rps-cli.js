@@ -35,9 +35,9 @@ let shoot = args._[0]
 //try {
     console.log(JSON.stringify(rpsls(shoot)))
     
-//} catch (error) {
+/*} catch (error) {
 
     console.log(help_message)
     console.log(rules)
     process.exit(1)
-//}
+}*/
